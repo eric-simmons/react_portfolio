@@ -43,7 +43,7 @@ function FormBody(props) {
                         className="form-control"
                     />
                 </div>
-                <button className='btn'>Submit</button>
+                <button className='btn btn-info'>Submit</button>
             </form>
         </>
     );

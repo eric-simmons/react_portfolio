@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Form from './Form';
+import FormBody from './index';
 
-function FormContainer() {
+function Form() {
 
     const [formState, setFormState] = useState({
         email: '',
@@ -29,7 +29,7 @@ function FormContainer() {
 
     return (
         <>
-            <Form
+            <FormBody
                 formState={formState}
                 handleInputs={handleInputs}
                 handleSubmit={handleSubmit}
@@ -37,4 +37,4 @@ function FormContainer() {
         </>
     )
 }
-export default FormContainer
+export default Form

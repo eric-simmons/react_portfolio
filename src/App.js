@@ -1,7 +1,7 @@
 
 import './App.css';
-import FormBody from './components/Form';
-import Form from './components/FormContainer';
+import Form from './components/Form/Form';
+import Profile from './components/Profile/Profile';
 
 function App() {
 
@@ -9,6 +9,8 @@ function App() {
   return (
     <>
       <Form/>
+
+      <Profile/>
     </>
   );
 }
