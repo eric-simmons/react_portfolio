@@ -1,18 +1,41 @@
-
-import './App.css';
-import Form from './components/Form/Form';
-import Profile from './components/Profile/Profile';
+import React, { useState } from 'react'
+import Navbar from './components/navbar'
+import Container from './components/container'
+import ContactPage from './pages/contact'
+import ProfilePage from './pages/profile'
+import ResumePage from './pages/resume'
+import ProjectPage from './pages/projects'
 
 function App() {
+  const [view, setView] = useState('profile')
 
- 
+  const renderView = () => {
+    if (view === 'profile') {
+      return <ProfilePage />
+    }
+    else if (view === 'contact') {
+      return <ContactPage />
+    }
+    else if (view === 'projects') {
+      return <ProjectPage />
+    }
+    else if (view === 'resume') {
+      return <ResumePage />
+    }
+    else return 'no view'
+  }
+
+
+
   return (
-    <>
-      <Form/>
-
-      <Profile/>
-    </>
-  );
+    <main className='main'>
+      <Navbar
+        className='navbar'
+        view={view}
+        setView={setView} />
+      {renderView()}
+    </main >
+  )
 }
 
-export default App;
+export default App

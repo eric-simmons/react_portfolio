@@ -1,0 +1,29 @@
+:root {
+    --lavender: ##EAE8FF;
+    --lightgray: #D8D5DB;
+    --coolgray: #8693AB;
+    --midgray: ##ADACB5;
+    --darkgray: ##2D3142;
+    --lightblue: ##B0D7FF;
+    --cadet: #637074;
+    --charcoal: #212227;
+}
+
+.background{
+    background-color: var(--charcoal);
+}
+
+.navbar {
+    color: var(--lightgray);
+    background-color: var(--charcoal);
+    margin: 10px;
+    padding: 50px;
+}
+
+.form{
+    background-color: var(--coolgray);
+}
+
+.container{
+    background-color: var(--lightblue);
+}
