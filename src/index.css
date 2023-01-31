@@ -27,3 +27,8 @@
 .container{
     background-color: var(--lightblue);
 }
+
+.resume{
+    margin: 50px;
+    padding: 50px;
+}
