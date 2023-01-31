@@ -8,10 +8,11 @@ const ContactPage = (props) => {
 
   const [errorMessage, setErrorMessage] = useState('')
   const [formState, setFormState] = useState({
-    email: '',
-    name: '',
-    message: ''
+    email: 'Email@email.com',
+    name: 'Name',
+    message: 'Message'
   })
+
 
   const handleInputs = event => {
     let value = event.target.value
@@ -25,8 +26,6 @@ const ContactPage = (props) => {
         setErrorMessage('')
       }
     }
-
-
     else {
       if (!value.length) {
         setErrorMessage(`${field} is required`)
@@ -48,9 +47,9 @@ const ContactPage = (props) => {
     //prevent submit if there is an error
     if (!errorMessage) {
       setFormState({
-        email: '',
-        name: '',
-        message: ''
+        email: 'Email@email.com',
+        name: 'Name',
+        message: 'Message'
       })
     }
 
@@ -68,7 +67,7 @@ const ContactPage = (props) => {
         handleSubmit={handleSubmit}
       />
       <center>
-        {errorMessage}
+        <h3>{errorMessage}</h3>
       </center>
     </>
   )
