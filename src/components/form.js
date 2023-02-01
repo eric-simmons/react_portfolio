@@ -4,7 +4,10 @@ import Input from './input'
 const Form = (props) => {
   return (
     <>
-        <form className='container' onSubmit={props.handleSubmit}>
+        <form
+        action="https://formsubmit.co/erictomlinsonsimmons@gmail.com" method="POST" 
+        className='container' 
+        onSubmit={props.handleSubmit}>
             <div className='mb-3'>
                 <label htmlFor="email" className='form-label'>Email</label>
                 <input
