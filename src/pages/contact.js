@@ -3,9 +3,6 @@ import Form from '../components/form'
 import { isEmail } from '../utils/helpers'
 
 const ContactPage = (props) => {
-
-
-
   const [errorMessage, setErrorMessage] = useState('')
   const [formState, setFormState] = useState({
     email: 'Email@email.com',
@@ -38,29 +35,31 @@ const ContactPage = (props) => {
       [field]: value
     }
     setFormState(updatedFormState)
+    console.log(formState.email)
   }
 
   //reset inputs
   const handleSubmit = event => {
+fetch("https://formsubmit.co/ajax/erictomlinsonsimmons@gmail.com", {
+  method: "POST",
+  headers: { 
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+  },
+  body: JSON.stringify({
+    email: formState.email,
+      name: formState.name,
+      message: formState.message
+  })
+})
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.log(error));
     
     event.preventDefault()
-    fetch("https://formsubmit.co/ajax/EricTomlinsonSimmons@gmail.com", {
-    method: "POST",
-    headers: { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-    },
-    body: JSON.stringify({
-        name: "FormSubmit",
-        message: "I'm from Devro LABS"
-    })
-})
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.log(error));
     //prevent submit if there is an error
     if (!errorMessage) {
-      console.log('submit')
+   
       
       setFormState({
         email: 'Email@email.com',

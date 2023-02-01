@@ -5,7 +5,8 @@ const Form = (props) => {
   return (
     <>
         <form
-        action="https://formsubmit.co/erictomlinsonsimmons@gmail.com" method="POST" 
+        // action="https://formsubmit.co/8f35c97c349254477e8cc00497ca9bfe" 
+        // method="POST" 
         className='container' 
         onSubmit={props.handleSubmit}>
             <div className='mb-3'>
