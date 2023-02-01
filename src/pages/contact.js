@@ -13,7 +13,6 @@ const ContactPage = (props) => {
     message: 'Message'
   })
 
-
   const handleInputs = event => {
     let value = event.target.value
     let field = event.target.name
@@ -41,7 +40,7 @@ const ContactPage = (props) => {
     setFormState(updatedFormState)
   }
 
-  //clear inputs
+ //reset inputs
   const handleSubmit = event => {
     event.preventDefault()
     //prevent submit if there is an error
