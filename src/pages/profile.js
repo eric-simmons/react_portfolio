@@ -19,11 +19,7 @@ const ProfilePage = () => {
     // }
 
     return (
-        <div className='container'>
-            <h1>Eric Simmons</h1>
-            {/* {createButtons} */}
-
-        </div>
+        <></>
     )
 }
 

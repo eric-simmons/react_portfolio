@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Navbar from './components/navbar'
-import Footer from './components/footer'
+import Processing from './components/processing'
 import ContactPage from './pages/contact'
 import ProfilePage from './pages/profile.js'
 import ResumePage from './pages/resume'
@@ -29,12 +29,18 @@ function App() {
 
   return (
     <main className='main'>
+      
       <Navbar
         className='navbar'
         view={view}
         setView={setView} />
-        
+        <div className='container'>
+            <h1>Eric Simmons</h1>
+            {/* {createButtons} */}
+
+        </div>
       {renderView()}
+      <Processing />
       
     </main >
   )
