@@ -8,7 +8,9 @@ function ProjectPage() {
     getGithub()
   }, [])
   const getGithub = async () => {
-    let repoPage = await fetch('https://api.github.com/users/eric-simmons/repos?sort=starred&per_page=6')
+    let repoPage = await fetch("https://api.github.com/users/eric-simmons/starred?per_page=8")
+    
+    // await fetch('https://api.github.com/users/eric-simmons/repos?sort=starred&per_page=6')
     repoPage = await repoPage.json()
     setRepoData([...repoPage])
   }
@@ -19,7 +21,8 @@ function ProjectPage() {
       {repoData.map((repo, i) => (
         <Projects
           repoName={repo.name}
-          repoUrl={repo.url}
+          repoDescription = {repo.description}
+          repoUrl={repo.html_url}
           key={i}>
         </Projects>
       ))}

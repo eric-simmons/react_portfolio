@@ -3,14 +3,15 @@ import React, { useState } from 'react'
 const Navbar = ({ view, setView }) => {
     return (
         <nav className="navbar">
-            <img 
+            <img
                 onClick={() => setView('profile')}
                 id="logo"
                 src="../images/logo1 copy.png"
                 alt="blue purple geomtric logo"
                 width="40px" />
-
-            {/* <img
+            
+            {/* lightmode?darkmode?
+            <img
                 id="lightswitch"
                 src="../images/lightmode.png"
                 alt="gradient circle"

@@ -1,10 +1,12 @@
-function Projects({ repoName, repoUrl }) {
+function Projects({ repoName, repoUrl, repoDescription }) {
 
     return (
         <div className="container">
             <a href={repoUrl}>
-                {repoName}
+               <h3>{repoName}</h3> 
             </a>
+            <div>{repoDescription}</div>
+            <br></br>
         </div>
     )
 }
