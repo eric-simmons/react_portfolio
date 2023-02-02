@@ -11,4 +11,4 @@ This portfolio page was built using React
 * [React](https://reactjs.org/)
 
 ## Deployed
-*[Heroku](https://limitless-savannah-77883.herokuapp.com/)
+* [Heroku](https://limitless-savannah-77883.herokuapp.com/)
