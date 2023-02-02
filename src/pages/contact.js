@@ -4,6 +4,7 @@ import { isEmail } from '../utils/helpers'
 
 const ContactPage = (props) => {
   const [errorMessage, setErrorMessage] = useState('')
+  const [disabled, setIsDisabled] = useState(true)
   const [formState, setFormState] = useState({
     email: 'Email@email.com',
     name: 'Name',
@@ -17,14 +18,18 @@ const ContactPage = (props) => {
       let validEmail = isEmail(value)
       if (!validEmail) {
         setErrorMessage("Email is Invalid")
+        setIsDisabled(true)
       } else {
+        setIsDisabled(false)
         setErrorMessage('')
       }
     }
     else {
       if (!value.length) {
         setErrorMessage(`${field} is required`)
+        setIsDisabled(true)
       } else {
+        setIsDisabled(false)
         setErrorMessage("")
       }
     }
@@ -38,6 +43,7 @@ const ContactPage = (props) => {
   //reset inputs
   const handleSubmit = event => {
     event.preventDefault()
+
     //send form to my email
     fetch("https://formsubmit.co/ajax/erictomlinsonsimmons@gmail.com", {
       method: "POST",
@@ -54,17 +60,20 @@ const ContactPage = (props) => {
       .then(response => response.json())
       .then(setErrorMessage("Message Submitted!"))
       .catch(error => console.log(error))
-      .finally(setFormState({
+      .finally(
+        setFormState({
         email: 'Email@email.com',
         name: 'Name',
         message: 'Message'
       })
+      
       )
   }
 
   return (
     <div className='container'>
       <Form
+        disabled={disabled}
         formState={formState}
         handleInputs={handleInputs}
         handleSubmit={handleSubmit}

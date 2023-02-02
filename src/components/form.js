@@ -30,7 +30,11 @@ const Form = (props) => {
                     type="text"
                     className="form-control"
                 />
-                <button className='btn btn-info'>Submit</button>
+                <button 
+                className='btn btn-info'
+                disabled={props.disabled}
+                >Submit
+                </button>
             </form>
         </>
     );
