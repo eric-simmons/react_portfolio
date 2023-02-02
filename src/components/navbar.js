@@ -35,7 +35,7 @@ const Navbar = ({ view, setView }) => {
             </a>
 
             <a href="https://github.com/eric-simmons">Github</a>
-            <a href="https://www.linkedin.com/in/eric-simmons-917953251">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/eric-tomlinson-simmons/">LinkedIn</a>
             <div className="container">
 
                 <a
