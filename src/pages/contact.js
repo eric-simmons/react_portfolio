@@ -45,7 +45,7 @@ const ContactPage = (props) => {
     event.preventDefault()
 
     //send form to my email
-    fetch("https://formsubmit.co/ajax/erictomlinsonsimmons@gmail.com", {
+    fetch("https://formsubmit.co/ajax/8f35c97c349254477e8cc00497ca9bfe.com", {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
