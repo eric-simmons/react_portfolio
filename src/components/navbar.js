@@ -3,8 +3,18 @@ import React, { useState } from 'react'
 const Navbar = ({ view, setView }) => {
     return (
         <nav className="navbar">
-            <img href="index.html" id="logo" src="../images/logo1 copy.png" alt="blue purple geomtric logo" width="40px" />
-            <img id="lightswitch" src="../images/lightmode.png" alt="gradient circle" width="30px" />
+            <img 
+                onClick={() => setView('profile')}
+                id="logo"
+                src="../images/logo1 copy.png"
+                alt="blue purple geomtric logo"
+                width="40px" />
+
+            {/* <img
+                id="lightswitch"
+                src="../images/lightmode.png"
+                alt="gradient circle"
+                width="30px" /> */}
             <a
                 onClick={() => setView('projects')}
                 className={`nav-link ${view === 'projects' ? 'active fw-bold' : ''}`}>
@@ -26,10 +36,10 @@ const Navbar = ({ view, setView }) => {
             <div className="container">
 
                 <a
-                    onClick={() => setView('profile')}
+
                     className={`nav-link ${view === 'profile' ? 'active fw-bold' : ''}`}
                 >
-                    <h2>Eric Simmons</h2>
+
                 </a>
 
 
