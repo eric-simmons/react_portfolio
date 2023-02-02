@@ -1,52 +1,30 @@
 import React, { useState, useEffect } from 'react'
-import Profile from '../components/profile'
+import Container from '../components/container'
 import Projects from '../components/projects'
 
 function ProjectPage() {
-  const [userData, setUserData] = useState(null)
   const [repoData, setRepoData] = useState([])
-
-  //gets on mount
   useEffect(() => {
     getGithub()
   }, [])
-
   const getGithub = async () => {
-    let mainPage = await fetch('https://api.github.com/users/eric-simmons')
     let repoPage = await fetch('https://api.github.com/users/eric-simmons/repos?sort=starred&per_page=6')
-
-    mainPage = await mainPage.json()
     repoPage = await repoPage.json()
-
-  
-
-    
-
-    setUserData(mainPage)
     setRepoData([...repoPage])
   }
-
-  return !!userData ? (
-    <>
-      <Profile
-        userData={userData}
-      >
-        Profile
-      </Profile>
-
+  console.log(repoData)
+  return !!repoData ? (
+    <div
+      className='container'>
       {repoData.map((repo, i) => (
-       
         <Projects
-        
           repoName={repo.name}
+          repoUrl={repo.url}
           key={i}>
         </Projects>
       ))}
-    </>
-
-
+    </div>
   ) : <p>loading..</p>
-
 }
 
 export default ProjectPage

@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import Navbar from './components/navbar'
-import Container from './components/container'
+import Footer from './components/footer'
 import ContactPage from './pages/contact'
-import ProfilePage from './pages/profile'
+import ProfilePage from './pages/profile.js'
 import ResumePage from './pages/resume'
 import ProjectPage from './pages/projects'
 
@@ -33,7 +33,9 @@ function App() {
         className='navbar'
         view={view}
         setView={setView} />
+        
       {renderView()}
+      
     </main >
   )
 }

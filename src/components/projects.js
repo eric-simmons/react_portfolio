@@ -1,10 +1,11 @@
-function Projects({repoName}) {
+function Projects({ repoName, repoUrl }) {
+
     return (
-        <>
-        <div className="card mb-3">
-            {repoName}
+        <div className="container">
+            <a href={repoUrl}>
+                {repoName}
+            </a>
         </div>
-        </>
     )
 }
 

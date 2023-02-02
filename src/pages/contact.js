@@ -13,10 +13,9 @@ const ContactPage = (props) => {
   const handleInputs = event => {
     let value = event.target.value
     let field = event.target.name
-
     if (field === "email") {
-      let emailTest = isEmail(value)
-      if (!emailTest) {
+      let validEmail = isEmail(value)
+      if (!validEmail) {
         setErrorMessage("Email is Invalid")
       } else {
         setErrorMessage('')
@@ -29,7 +28,6 @@ const ContactPage = (props) => {
         setErrorMessage("")
       }
     }
-
     const updatedFormState = {
       ...formState,
       [field]: value
@@ -37,45 +35,35 @@ const ContactPage = (props) => {
     setFormState(updatedFormState)
     console.log(formState.email)
   }
-
   //reset inputs
   const handleSubmit = event => {
-fetch("https://formsubmit.co/ajax/erictomlinsonsimmons@gmail.com", {
-  method: "POST",
-  headers: { 
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-  },
-  body: JSON.stringify({
-    email: formState.email,
-      name: formState.name,
-      message: formState.message
-  })
-})
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.log(error));
-    
     event.preventDefault()
-    //prevent submit if there is an error
-    if (!errorMessage) {
-   
-      
-      setFormState({
+    //send form to my email
+    fetch("https://formsubmit.co/ajax/erictomlinsonsimmons@gmail.com", {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        email: formState.email,
+        name: formState.name,
+        message: formState.message
+      })
+    })
+      .then(response => response.json())
+      .then(setErrorMessage("Message Submitted!"))
+      .catch(error => console.log(error))
+      .finally(setFormState({
         email: 'Email@email.com',
         name: 'Name',
         message: 'Message'
       })
-    }
-
-
-
+      )
   }
 
-  //post request to back end
-
   return (
-    <>
+    <div className='container'>
       <Form
         formState={formState}
         handleInputs={handleInputs}
@@ -84,7 +72,7 @@ fetch("https://formsubmit.co/ajax/erictomlinsonsimmons@gmail.com", {
       <center>
         <h3>{errorMessage}</h3>
       </center>
-    </>
+    </div>
   )
 }
 
