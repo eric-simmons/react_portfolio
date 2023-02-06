@@ -40,7 +40,7 @@ function App() {
 
         </div>
       {renderView()}
-      <Processing />
+      
       
     </main >
   )

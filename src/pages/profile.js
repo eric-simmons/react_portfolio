@@ -9,15 +9,6 @@ const ProfilePage = () => {
         // createButtons()
     }, [])
 
-    
-    // const createButtons = () => {
-    //     for (let i = 0; i < 100; i++) {
-    //         <button>
-    //             "hey"
-    //         </button>
-    //     }
-    // }
-
     return (
         <></>
     )
