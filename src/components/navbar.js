@@ -7,7 +7,7 @@ const Navbar = ({ view, setView }) => {
             <img
                 onClick={() => setView('profile')}
                 id="logo"
-                src="../images/logo1 copy.png"
+                src={`${process.env.PUBLIC_URL}/images/logo1 copy.png`}
                 alt="blue purple geomtric logo"
                 width="40px" />
                 

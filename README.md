@@ -15,7 +15,8 @@ This portfolio page was built using React
 The projects page shows the projects marked "on my site" in the Central Scrutinizer
 (`~/code/central_scrutinizer`). It exports them into `public/portfolio/` (`projects.json` plus an icon
 for each): click **[ update site ]** on its pieces page, or run `npm run cli -- site` there, then commit
-and deploy this site. Until there is an export, the page lists my starred GitHub repos instead.
+and push. Until there is an export, the page lists my starred GitHub repos instead.
 
 ## Deployed
-* [Heroku](https://limitless-savannah-77883.herokuapp.com/)
+* [GitHub Pages](https://eric-simmons.github.io/react_portfolio/): every push to `main` builds and
+  publishes the site (`.github/workflows/pages.yml`).
