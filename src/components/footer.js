@@ -1,7 +1,7 @@
 const Footer = (props) => {
     return (
         <>
-        footer
+        foot
         </>
     )
 

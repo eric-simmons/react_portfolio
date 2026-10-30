@@ -94,6 +94,10 @@ input[type] {
 
 }
 
+.box{
+    max-width: 500px;
+}
+
 .footer {
     color: var(--lightgray);
     background-color: var(--coolgray);

@@ -29,19 +29,24 @@ function App() {
 
   return (
     <main className='main'>
-      
+
       <Navbar
         className='navbar'
         view={view}
         setView={setView} />
-        <div className='container'>
-            <h1>Eric Simmons</h1>
-            {/* {createButtons} */}
+      <div className='container'>
+        <h1>Hi! My Name is Eric Simmons</h1>
+        {/* {createButtons} */}
 
-        </div>
+      </div>
       {renderView()}
-      
-      
+      <div className='container'>
+        <div className='box'>
+          I am a fullstack developer who likes to keep learning. Right now I am learning Svelte and Graphql! I like to write simple, effective and easy to read code. I am also a musician and an electronic tinkerer. I build guitar amps and modular synths.
+        </div>
+      </div>
+
+
     </main >
   )
 }
